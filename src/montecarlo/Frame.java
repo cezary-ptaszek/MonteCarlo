@@ -26,6 +26,7 @@ public class Frame
 	public static JTextField tNumber;
 	private static JTextField tSolution;
 	public static List<Double> Points;
+	private static double PI;
 	
 	public Frame() 
 	{
@@ -83,7 +84,7 @@ public class Frame
 				pkt_square = Integer.parseInt(line);
 				}catch (NumberFormatException ex)
 				{
-					JOptionPane.showMessageDialog(null,"To nie jest liczba!");
+					JOptionPane.showMessageDialog(null,"Wprowadz prawidlowy format liczby!");
 				}
 				 
 				int x, y;
@@ -104,8 +105,15 @@ public class Frame
 						++pkt_circle;
 					}
 				}
-
-				double PI =  4. * pkt_circle / pkt_square;
+				
+				if(pkt_circle==0)
+				{
+					PI=0;
+				}
+				else 
+				{
+					PI =  4. * pkt_circle / pkt_square;
+				}
 				String Pi = String.valueOf(PI);
 				tSolution.setText(Pi);
 				
@@ -116,19 +124,27 @@ public class Frame
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				JOptionPane.showMessageDialog(null,"Program oblicza przyblizenie liczby PI metoda Monte Carlo.\nCreate by Cezary Ptaszek");
+				JOptionPane.showMessageDialog(null,"Program oblicza przyblizenie liczby PI metoda Monte Carlo.\nProgram przyjmuje liczby calkowite jako dane wejsciowe bez przecinka/kropki np.\n2500\n30000\n\nAll rights reserved \u00a9 Create by Cezary Ptaszek.");
 			}
 		});
 		bChart.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				frame = new JFrame("Wykres");
-				frame.setSize(750, 750);
-				frame.setVisible(true);
+				//System.out.println(PI);
+				if(PI==0)
+				{
+					JOptionPane.showMessageDialog(null,"Wpisz prawidlowe dane!");
+				}
+				else 
+				{
+					frame = new JFrame("Wykres");
+					frame.setSize(750, 750);
+					frame.setVisible(true);
 			
-				Drawing draw = new Drawing();
-				frame.add(draw);
+					Drawing draw = new Drawing();
+					frame.add(draw);
+				}
 				
 			}
 		});
