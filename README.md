@@ -1,3 +1,3 @@
 # MonteCarlo
 Program stwrzony do bliczania liczby PI.
-Copyright Cezary Ptaszek
+\nCopyright Cezary Ptaszek
