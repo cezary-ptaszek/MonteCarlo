@@ -3,7 +3,6 @@ package montecarlo;
 import java.awt.*;
 import java.awt.geom.*;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Drawing extends JPanel 
@@ -30,7 +29,7 @@ public class Drawing extends JPanel
 		
 		int quan = Integer.parseInt(Frame.tNumber.getText());
 		
-		System.out.println(quan);
+		//System.out.println(quan);
 		for (int i=0; i<quan; i++)
 		{
 			double x = Frame.Points.get(2*i);
