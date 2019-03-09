@@ -1,3 +1,2 @@
-# MonteCarlo
-Program stwrzony do bliczania liczby PI.
-Copyright Cezary Ptaszek
+## MonteCarlo
+Program stwrzony do bliczania liczby PI za pomocą metody MonteCarlo.
